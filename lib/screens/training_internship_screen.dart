@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hiremi_t5/screens/enquiry_training_internship.dart';
+import 'package:hiremi_t5/screens/training_subscribe.dart';
 import 'package:hiremi_t5/widgets/custom_banner.dart';
 import 'package:hiremi_t5/widgets/custom_bottom_bar.dart';
 import 'package:hiremi_t5/widgets/custom_course_profile.dart';
@@ -197,37 +199,47 @@ class _TrainingInternshipScreenState extends State<TrainingInternshipScreen> {
               SizedBox(
                 height: size.height * 0.02,
               ),
-              Container(
-                  width: size.width * 0.92,
-                  height: size.height * 0.06,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFFEFC59B), Color(0xFFC1272D)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight)),
-                  child: Center(
-                      child: Text(
-                    'Enroll Now',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ))),
-              Container(
-                  width: size.width * 0.92,
-                  height: size.height * 0.06,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Color(0xFFC1272D))),
-                  child: Center(
-                      child: Text(
-                    'Enquire Now',
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Color(0xFFC1272D),
-                        fontWeight: FontWeight.bold),
-                  ))),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => TrainingSubscribe(),));
+                },
+                child: Container(
+                    width: size.width * 0.92,
+                    height: size.height * 0.06,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFEFC59B), Color(0xFFC1272D)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight)),
+                    child: Center(
+                        child: Text(
+                      'Enroll Now',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ))),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => EnquiryTrainingInternship(),));
+                },
+                child: Container(
+                    width: size.width * 0.92,
+                    height: size.height * 0.06,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xFFC1272D))),
+                    child: Center(
+                        child: Text(
+                      'Enquire Now',
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Color(0xFFC1272D),
+                          fontWeight: FontWeight.bold),
+                    ))),
+              ),
               SizedBox(),
             ],
           ),

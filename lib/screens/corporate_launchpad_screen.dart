@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hiremi_t5/screens/corporate_subscribe.dart';
+import 'package:hiremi_t5/screens/enquiry_corporate_launchpad.dart';
 import 'package:hiremi_t5/widgets/custom_advantage_success.dart';
 import 'package:hiremi_t5/widgets/custom_banner.dart';
 import 'package:hiremi_t5/widgets/custom_bottom_bar.dart';
@@ -346,38 +348,48 @@ class _CorporateLaunchpadScreenState extends State<CorporateLaunchpadScreen> {
                   },
                 ),
               ),
-              Container(
-                width: size.width * 0.92,
-                height: size.height * 0.06,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(
-                        colors: [Color(0xFF467AA7), Color(0xFF1F2181)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight)),
-                child: Center(
-                  child: Text(
-                    'Enroll Now',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CorporateSubscribe(),));
+                },
+                child: Container(
+                  width: size.width * 0.92,
+                  height: size.height * 0.06,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                          colors: [Color(0xFF467AA7), Color(0xFF1F2181)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight)),
+                  child: Center(
+                    child: Text(
+                      'Enroll Now',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
-              Container(
-                width: size.width * 0.92,
-                height: size.height * 0.06,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Color(0xFF202382))),
-                child: Center(
-                  child: Text(
-                    'Enquire Now',
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Color(0xFF202382),
-                        fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => EnquiryCorporateLaunchpad(),));
+                },
+                child: Container(
+                  width: size.width * 0.92,
+                  height: size.height * 0.06,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xFF202382))),
+                  child: Center(
+                    child: Text(
+                      'Enquire Now',
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Color(0xFF202382),
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),

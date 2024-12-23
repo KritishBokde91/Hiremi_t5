@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 20,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Image.asset('assets/images/top_banner.png'),
@@ -90,49 +90,55 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.black,
                   fontWeight: FontWeight.w600),
             ),
-            Row(
-              spacing: 8,
-              children: [
-                SizedBox(
-                  width: 10,
-                ),
-                CustomHiremiFeatured(
-                  image: 'assets/images/unimentor1.png',
-                  logo: 'assets/images/unimentor2.png',
-                  title: 'Unimentor Program',
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UnimentorScreen(),
-                        ));
-                  },
-                ),
-                CustomHiremiFeatured(
-                  image: 'assets/images/training_internship1.png',
-                  logo: 'assets/images/training_internship2.png',
-                  title: 'Training + Internship',
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TrainingInternshipScreen(),
-                        ));
-                  },
-                ),
-                CustomHiremiFeatured(
-                  image: 'assets/images/corporate_launchpad1.png',
-                  logo: 'assets/images/corporate_launchpad2.png',
-                  title: 'Corporate Launchpad',
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CorporateLaunchpadScreen(),
-                        ));
-                  },
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                spacing: 8,
+                children: [
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  CustomHiremiFeatured(
+                    image: 'assets/images/unimentor1.png',
+                    logo: 'assets/images/unimentor2.png',
+                    title: 'Unimentor Program',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UnimentorScreen(),
+                          ));
+                    },
+                  ),
+                  CustomHiremiFeatured(
+                    image: 'assets/images/training_internship1.png',
+                    logo: 'assets/images/training_internship2.png',
+                    title: 'Training + Internship',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TrainingInternshipScreen(),
+                          ));
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: CustomHiremiFeatured(
+                      image: 'assets/images/corporate_launchpad1.png',
+                      logo: 'assets/images/corporate_launchpad2.png',
+                      title: 'Corporate Launchpad',
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CorporateLaunchpadScreen(),
+                            ));
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             Text(
               "Learn More About Programs",
